@@ -14,14 +14,14 @@ import java.util.Random;
 
 public class CMain {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		String sDS = "corel5k";
+		String sDS = "scene";
 		int iCV = 10;
 		int iFold = 10;
 		int nAttr = 499;
 		int nLabe = 374;
 		
 		//Parameters of the genetic learning of preliminary rule base
-		int nFS = 1;
+		int nFS = 5;
 		int rbs = 400;
 		int ps = 200;
 		double pdc = 0.9;
