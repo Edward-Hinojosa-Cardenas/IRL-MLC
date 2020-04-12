@@ -14,14 +14,14 @@ import java.util.Random;
 
 public class CMain {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		String sDS = "scene";
+		String sDS = "corel5k";
 		int iCV = 10;
 		int iFold = 10;
-		int nAttr = 294;
-		int nLabe = 6;
+		int nAttr = 499;
+		int nLabe = 374;
 		
 		//Parameters of the genetic learning of preliminary rule base
-		int nFS = 5;
+		int nFS = 1;
 		int rbs = 400;
 		int ps = 200;
 		double pdc = 0.9;
@@ -201,8 +201,14 @@ public class CMain {
 				}
 			}
 			r_aux = c;
-			dStep = (dMax - dMin) / (nFS - 1);
-			dMin = dMin - dStep;
+			if(nFS != 1) {
+				dStep = (dMax - dMin) / (nFS - 1);
+				dMin = dMin - dStep;
+			}
+			else {
+				dStep = 1.0;
+				dMin = 0.0;
+			}
 			for (c_aux = 0; c_aux < nFS * 3; c_aux = c_aux + 3) {
 				dFuzzySets[r_aux][c_aux] = dMin;
 				dFuzzySets[r_aux][c_aux + 1] = dMin + dStep;
